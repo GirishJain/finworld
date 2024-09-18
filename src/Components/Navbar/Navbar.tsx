@@ -36,6 +36,7 @@ const Navbar = (props: Props) => {
           <div className="hidden lg:flex items-center space-x-6 text-back">
             <div className="hover:text-darkBlue">Welcome, {user?.userName}</div>
             <a
+              style={{ cursor: "pointer" }}
               onClick={logout}
               className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
             >
