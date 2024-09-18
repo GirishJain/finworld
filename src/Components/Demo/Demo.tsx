@@ -9,6 +9,16 @@ interface Props {}
 const Demo = (props: Props) => {
   return (
     <>
+      <div className="div-api-link">
+        Please click on the{" "}
+        <a
+          href="https://finworld001-g8cgetfzc4abfagj.eastasia-01.azurewebsites.net/swagger/index.html"
+          target="_blank"
+        >
+          ApiLink
+        </a>{" "}
+        , if the application breaks
+      </div>
       <div className="divframe">
         <span className="helper"></span>
         <img src={snap1} alt="Picture 1" />

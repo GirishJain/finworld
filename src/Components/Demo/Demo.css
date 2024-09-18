@@ -1,3 +1,14 @@
+.div-api-link{
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    a{
+        color: cornflowerblue;
+    }
+}
+
 .divframe {
     white-space: nowrap;    
     text-align: center; 
