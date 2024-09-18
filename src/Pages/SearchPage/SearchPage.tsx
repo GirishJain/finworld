@@ -30,7 +30,7 @@ const SearchPage = (props: Props) => {
   useEffect(() => {
     const callPortfolioOnTimer = setTimeout(() => {
       getPortfolio();
-    }, 500);
+    }, 1000);
     return () => clearTimeout(callPortfolioOnTimer);
   }, []);
 
