@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/finworld/static/css/main.4454a7a4.css",
-    "main.js": "/finworld/static/js/main.7a9840a7.js",
+    "main.css": "/finworld/static/css/main.fefb23a7.css",
+    "main.js": "/finworld/static/js/main.a04af410.js",
     "static/js/453.643270d8.chunk.js": "/finworld/static/js/453.643270d8.chunk.js",
+    "static/media/snap5.jpg": "/finworld/static/media/snap5.3e390dd045d4cab03ae7.jpg",
+    "static/media/snap4.jpg": "/finworld/static/media/snap4.959e215c46237cffd3f1.jpg",
+    "static/media/snap2.jpg": "/finworld/static/media/snap2.da85f8bba4904ef79201.jpg",
     "static/media/hero.png": "/finworld/static/media/hero.cd4d3ca9ad571c11442f.png",
+    "static/media/snap3.jpg": "/finworld/static/media/snap3.6ed27fe6ae5a83c335f9.jpg",
+    "static/media/snap1.jpg": "/finworld/static/media/snap1.58b1da9c7b4c0340d458.jpg",
     "index.html": "/finworld/index.html",
-    "main.4454a7a4.css.map": "/finworld/static/css/main.4454a7a4.css.map",
-    "main.7a9840a7.js.map": "/finworld/static/js/main.7a9840a7.js.map",
+    "main.fefb23a7.css.map": "/finworld/static/css/main.fefb23a7.css.map",
+    "main.a04af410.js.map": "/finworld/static/js/main.a04af410.js.map",
     "453.643270d8.chunk.js.map": "/finworld/static/js/453.643270d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4454a7a4.css",
-    "static/js/main.7a9840a7.js"
+    "static/css/main.fefb23a7.css",
+    "static/js/main.a04af410.js"
   ]
 }
