@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "finworldapp", element: <HomePage /> },
+      { path: "finworld", element: <HomePage /> },
       { path: "register", element: <RegisterPage /> },
       { path: "login", element: <LoginPage /> },
       {
