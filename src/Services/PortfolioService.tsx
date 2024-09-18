@@ -27,15 +27,10 @@ export const portfolioDeleteAPI = async (symbol: string) => {
 };
 
 export const portfolioGetAPI = async () => {
-  let trial: number = 1;
   try {
     const data = await axios.get<PortfolioGet[]>(api);
     return data;
   } catch (error) {
-    if (trial == 1) {
-      trial++;
-      portfolioGetAPI();
-    }
     handleError(error);
   }
 };
