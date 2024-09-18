@@ -5,12 +5,12 @@
     display: "block";
     margin-left: auto ;
     margin-right: auto;
+    img{
+        border: 1px solid;
+    }
 }
 .helper{
     display: inline-block;
     height: 100%;
-    vertical-align: middle;
-    img{
-        border: 1px solid;
-    }
+    vertical-align: middle;    
 }
