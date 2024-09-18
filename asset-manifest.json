@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/finworld/static/css/main.2f2072da.css",
-    "main.js": "/finworld/static/js/main.a04af410.js",
+    "main.js": "/finworld/static/js/main.bc3ad4d2.js",
     "static/js/453.643270d8.chunk.js": "/finworld/static/js/453.643270d8.chunk.js",
     "static/media/snap5.jpg": "/finworld/static/media/snap5.3e390dd045d4cab03ae7.jpg",
     "static/media/snap4.jpg": "/finworld/static/media/snap4.959e215c46237cffd3f1.jpg",
@@ -11,11 +11,11 @@
     "static/media/snap1.jpg": "/finworld/static/media/snap1.58b1da9c7b4c0340d458.jpg",
     "index.html": "/finworld/index.html",
     "main.2f2072da.css.map": "/finworld/static/css/main.2f2072da.css.map",
-    "main.a04af410.js.map": "/finworld/static/js/main.a04af410.js.map",
+    "main.bc3ad4d2.js.map": "/finworld/static/js/main.bc3ad4d2.js.map",
     "453.643270d8.chunk.js.map": "/finworld/static/js/453.643270d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2f2072da.css",
-    "static/js/main.a04af410.js"
+    "static/js/main.bc3ad4d2.js"
   ]
 }
