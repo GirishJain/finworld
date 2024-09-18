@@ -1,9 +1,10 @@
 import axios from "axios";
 import { handleError } from "../Helpers/ErrorHandler";
 import { UserProfileToken } from "../Models/User";
-import { SERVICE_URL } from "../Helpers/Constants";
+import { SERVICE_URL_LOCAL, SERVICE_URL_PROD } from "../Helpers/Constants";
 
-const api = SERVICE_URL;
+const api =
+  process.env.NODE_ENV == "production" ? SERVICE_URL_PROD : SERVICE_URL_LOCAL;
 
 export const loginAPI = async (username: string, password: string) => {
   try {

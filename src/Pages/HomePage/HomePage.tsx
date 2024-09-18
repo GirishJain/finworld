@@ -1,12 +1,15 @@
-import React from 'react'
-import Hero from '../../Components/Hero/Hero'
+import React from "react";
+import Hero from "../../Components/Hero/Hero";
+import DesignGuide from "../DesignGuide/DesignGuide";
 
-interface Props { }
+interface Props {}
 
 const HomePage = (props: Props) => {
-    return (
-        <Hero />
-    )
-}
+  return (
+    <>
+      <Hero />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;

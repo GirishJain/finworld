@@ -1,9 +1,12 @@
 import axios from "axios";
 import { PortfolioGet, PortfolioPost } from "../Models/Portfolio";
 import { handleError } from "../Helpers/ErrorHandler";
-import { SERVICE_URL } from "../Helpers/Constants";
+import { SERVICE_URL_PROD, SERVICE_URL_LOCAL } from "../Helpers/Constants";
 
-const api = SERVICE_URL + "portfolio/";
+const api =
+  (process.env.NODE_ENV == "production"
+    ? SERVICE_URL_PROD
+    : SERVICE_URL_LOCAL) + "portfolio/";
 
 export const portfolioAddAPI = async (symbol: string) => {
   try {

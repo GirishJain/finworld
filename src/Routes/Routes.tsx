@@ -11,6 +11,7 @@ import CashFlowStatement from "../Components/CashFlowStatement/CashFlowStatement
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import ProtectedRoute from "./ProtectedRoute";
+import Demo from "../Components/Demo/Demo";
 
 export const router = createBrowserRouter([
   { path: "/", element: <Navigate replace to="/finworld" /> },
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
       },
       { path: "design-guide", element: <DesignGuide /> },
       {
-        path: "company/:ticker",
+        path: "finworld/company/:ticker",
         element: (
           <ProtectedRoute>
             <CompanyPage />
@@ -44,6 +45,7 @@ export const router = createBrowserRouter([
           { path: "cashflow-statement", element: <CashFlowStatement /> },
         ],
       },
+      { path: "finworld/demo", element: <Demo /> },
     ],
   },
 ]);

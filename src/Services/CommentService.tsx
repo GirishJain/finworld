@@ -1,9 +1,12 @@
 import axios from "axios";
 import { CommentGet, CommentPost } from "../Models/CommentPost";
 import { handleError } from "../Helpers/ErrorHandler";
-import { SERVICE_URL } from "../Helpers/Constants";
+import { SERVICE_URL_PROD, SERVICE_URL_LOCAL } from "../Helpers/Constants";
 
-const api = SERVICE_URL + "comment/";
+const api =
+  (process.env.NODE_ENV == "production"
+    ? SERVICE_URL_PROD
+    : SERVICE_URL_LOCAL) + "comment/";
 
 export const commentPostAPI = async (
   title: string,

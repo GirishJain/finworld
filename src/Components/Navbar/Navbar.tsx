@@ -22,6 +22,14 @@ const Navbar = (props: Props) => {
             >
               Search
             </Link>
+            &nbsp;
+            <Link
+              to="finworld/demo"
+              target="_blank"
+              className="text-darkBlue hover:text-darkBlue"
+            >
+              Demo
+            </Link>
           </div>
         </div>
         {isLoggedIn() ? (
