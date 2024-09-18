@@ -28,7 +28,10 @@ const SearchPage = (props: Props) => {
   };
 
   useEffect(() => {
-    getPortfolio();
+    const callPortfolioOnTimer = setTimeout(() => {
+      getPortfolio();
+    }, 500);
+    return () => clearTimeout(callPortfolioOnTimer);
   }, []);
 
   const getPortfolio = () => {
