@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "finworld", element: <HomePage /> },
       { path: "register", element: <RegisterPage /> },
-      { path: "login", element: <LoginPage /> },
+      { path: "finworld/login", element: <LoginPage /> },
       {
         path: "search",
         element: (

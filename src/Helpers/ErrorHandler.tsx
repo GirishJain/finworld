@@ -16,7 +16,7 @@ export const handleError = (error: any) => {
       toast.warning(err.data);
     } else if (err?.status == 401) {
       toast.warning("Please login");
-      window.history.pushState({}, "LoginPage", "/login");
+      window.history.pushState({}, "LoginPage", "/finworld/login");
     } else if (err) {
       toast.warning(err?.data);
     }
