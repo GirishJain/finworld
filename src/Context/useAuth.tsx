@@ -72,7 +72,7 @@ export const UserProvider = ({ children }: Props) => {
           setToken(res?.data.token);
           setUser(userObj!);
           toast.success("Login Success!");
-          navigate("/finworld/search");
+          navigate("/");
         }
       })
       .catch((e) => toast.warning("Server error occured"));

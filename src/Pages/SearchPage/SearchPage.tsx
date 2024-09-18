@@ -29,7 +29,6 @@ const SearchPage = (props: Props) => {
 
   useEffect(() => {
     getPortfolio();
-    getPortfolio();
   }, []);
 
   const getPortfolio = () => {
