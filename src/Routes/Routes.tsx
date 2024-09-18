@@ -19,10 +19,10 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "finworld", element: <HomePage /> },
-      { path: "register", element: <RegisterPage /> },
+      { path: "finworld/register", element: <RegisterPage /> },
       { path: "finworld/login", element: <LoginPage /> },
       {
-        path: "search",
+        path: "finworld/search",
         element: (
           <ProtectedRoute>
             <SearchPage />

@@ -16,7 +16,10 @@ const Navbar = (props: Props) => {
             <img src={logo} alt="" />
           </Link>
           <div className="hidden font-bold lg:flex">
-            <Link to="/search" className="text-black hover:text-darkBlue">
+            <Link
+              to="/finworld/search"
+              className="text-black hover:text-darkBlue"
+            >
               Search
             </Link>
           </div>
@@ -37,7 +40,7 @@ const Navbar = (props: Props) => {
               Login
             </Link>
             <Link
-              to="/register"
+              to="/finworld/register"
               className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
             >
               Signup
