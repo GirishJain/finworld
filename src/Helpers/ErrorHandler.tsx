@@ -14,6 +14,12 @@ export const handleError = (error: any) => {
       }
     } else if (err?.data) {
       toast.warning(err.data);
+      if (err?.data === "object" && Array.isArray(err?.data)) {
+        for (let valData of err?.data) {
+          toast.warning(valData.description);
+        }
+      }
+      toast.warning(err.data[0].description);
     } else if (err?.status == 401) {
       toast.warning("Please login");
       window.history.pushState({}, "LoginPage", "/finworld/login");

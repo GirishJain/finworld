@@ -56,7 +56,9 @@ export const UserProvider = ({ children }: Props) => {
           navigate("/");
         }
       })
-      .catch((e) => toast.warning("Server error occured"));
+      .catch((e) => {
+        toast.warning("Server error occured");
+      });
   };
 
   const loginUser = async (username: string, password: string) => {

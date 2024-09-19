@@ -18,7 +18,7 @@ const Navbar = (props: Props) => {
           <div className="hidden font-bold lg:flex">
             <Link
               to="/finworld/search"
-              className="text-black hover:text-darkBlue"
+              className="text-black hover:text-sky-600"
             >
               Search
             </Link>
@@ -26,7 +26,7 @@ const Navbar = (props: Props) => {
             <Link
               to="finworld/demo"
               target="_blank"
-              className="text-darkBlue hover:text-darkBlue"
+              className="text-sky-600 hover:text-darkBlue"
             >
               Demo
             </Link>
@@ -34,11 +34,11 @@ const Navbar = (props: Props) => {
         </div>
         {isLoggedIn() ? (
           <div className="hidden lg:flex items-center space-x-6 text-back">
-            <div className="hover:text-darkBlue">Welcome, {user?.userName}</div>
+            <div className="hover:text-sky-600">Welcome, {user?.userName}</div>
             <a
               style={{ cursor: "pointer" }}
               onClick={logout}
-              className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
+              className="px-8 py-3 font-bold rounded text-white bg-sky-600 hover:opacity-80"
             >
               Logout
             </a>
@@ -50,7 +50,7 @@ const Navbar = (props: Props) => {
             </Link>
             <Link
               to="/finworld/register"
-              className="px-8 py-3 font-bold rounded text-white bg-lightGreen hover:opacity-70"
+              className="px-8 py-3 font-bold rounded text-white bg-sky-500 hover:opacity-80"
             >
               Signup
             </Link>

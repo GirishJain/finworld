@@ -10,14 +10,17 @@ const Demo = (props: Props) => {
   return (
     <>
       <div className="div-api-link">
-        Please click on the{" "}
+        Please click on this{" "}
         <a
           href="https://finworld001-g8cgetfzc4abfagj.eastasia-01.azurewebsites.net/swagger/index.html"
           target="_blank"
         >
           ApiLink
         </a>{" "}
-        , if the application breaks
+        , if the application does not responds
+      </div>
+      <div className="div-demo-usr">
+        Demo user credentials: TestUser01/Test@123
       </div>
       <div className="divframe">
         <span className="helper"></span>
@@ -26,10 +29,6 @@ const Demo = (props: Props) => {
         <img src={snap2} alt="Picture 2" />
         <span className="helper"></span>
         <img src={snap3} alt="Picture 3" />
-        <span className="helper"></span>
-        <img src={snap4} alt="Picture 4" />
-        <span className="helper"></span>
-        <img src={snap5} alt="Picture 5" />
         <span className="helper"></span>
       </div>
     </>

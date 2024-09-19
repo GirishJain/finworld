@@ -19,14 +19,22 @@ const Hero = (props: Props) => {
           <div className="mx-auto lg:mx-0">
             <Link
               to="/finworld/search"
-              className="py-5 px-10 text-2xl font-bold text-white bg-lightGreen rounded lg:py-4 hover:opacity-70"
+              className="py-5 px-10 text-2xl font-bold text-white bg-sky-500 rounded lg:py-4 hover:opacity-80"
             >
               Get Started
             </Link>
           </div>
         </div>
         <div className="mb-24 mx-auto md:w-180 md:px-10 lg:mb-0 lg:w-1/2">
-          <img src={hero} alt="" />
+          <img
+            src={hero}
+            alt=""
+            style={{
+              marginTop: "100px",
+              borderRadius: "10px",
+              boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+            }}
+          />
         </div>
       </div>
     </section>
