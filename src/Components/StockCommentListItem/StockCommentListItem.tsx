@@ -109,7 +109,10 @@ const StockCommentListItem = ({
       <div className="relative flex gap-4">
         <div className="flex flex-col w-full">
           <div className="flex flex-row justify-between">
-            <p className=" relative text-xl whitespace-nowrap truncate overflow-hidden">
+            <p
+              className=" relative text-xl whitespace-nowrap truncate overflow-hidden"
+              title={comment.title}
+            >
               {comment.title}
             </p>
           </div>
