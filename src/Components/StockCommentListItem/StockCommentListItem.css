@@ -1,0 +1,24 @@
+.edit-btn, .delete-btn{
+    cursor: pointer;
+}
+
+.edit-btn{
+    position: absolute;
+    right: 55px;
+    svg{
+        position: absolute;
+        top: -2px;    
+        opacity: 0.8;
+    }
+}
+
+.delete-btn{
+    position: absolute;
+    right: 25px;
+    svg{
+        position: absolute;
+        top: -5px;    
+        opacity: 0.8;
+    }
+}
+

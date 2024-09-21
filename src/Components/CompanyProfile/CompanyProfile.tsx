@@ -9,6 +9,7 @@ import {
   formatRatio,
 } from "../../Helpers/NumberFormatting";
 import StockComment from "../StockComment/StockComment";
+import { CONST_ENV_VAR } from "../../Helpers/Constants";
 
 type Props = {};
 
@@ -81,14 +82,80 @@ const tableConfig = [
   },
 ];
 
+const emptyCompanyKeyMetrics: CompanyKeyMetrics = {
+  revenuePerShareTTM: 0,
+  netIncomePerShareTTM: 0,
+  operatingCashFlowPerShareTTM: 0,
+  freeCashFlowPerShareTTM: 0,
+  cashPerShareTTM: 0,
+  bookValuePerShareTTM: 0,
+  tangibleBookValuePerShareTTM: 0,
+  shareholdersEquityPerShareTTM: 0,
+  interestDebtPerShareTTM: 0,
+  marketCapTTM: 0,
+  enterpriseValueTTM: 0,
+  peRatioTTM: 0,
+  priceToSalesRatioTTM: 0,
+  pocfratioTTM: 0,
+  pfcfRatioTTM: 0,
+  pbRatioTTM: 0,
+  ptbRatioTTM: 0,
+  evToSalesTTM: 0,
+  enterpriseValueOverEBITDATTM: 0,
+  evToOperatingCashFlowTTM: 0,
+  evToFreeCashFlowTTM: 0,
+  earningsYieldTTM: 0,
+  freeCashFlowYieldTTM: 0,
+  debtToEquityTTM: 0,
+  debtToAssetsTTM: 0,
+  netDebtToEBITDATTM: 0,
+  currentRatioTTM: 0,
+  interestCoverageTTM: 0,
+  incomeQualityTTM: 0,
+  dividendYieldTTM: 0,
+  dividendYieldPercentageTTM: 0,
+  payoutRatioTTM: 0,
+  salesGeneralAndAdministrativeToRevenueTTM: 0,
+  researchAndDevelopementToRevenueTTM: 0,
+  intangiblesToTotalAssetsTTM: 0,
+  capexToOperatingCashFlowTTM: 0,
+  capexToRevenueTTM: 0,
+  capexToDepreciationTTM: 0,
+  stockBasedCompensationToRevenueTTM: 0,
+  grahamNumberTTM: 0,
+  roicTTM: 0,
+  returnOnTangibleAssetsTTM: 0,
+  grahamNetNetTTM: 0,
+  workingCapitalTTM: 0,
+  tangibleAssetValueTTM: 0,
+  netCurrentAssetValueTTM: 0,
+  investedCapitalTTM: 0,
+  averageReceivablesTTM: 0,
+  averagePayablesTTM: 0,
+  averageInventoryTTM: 0,
+  daysSalesOutstandingTTM: 0,
+  daysPayablesOutstandingTTM: 0,
+  daysOfInventoryOnHandTTM: 0,
+  receivablesTurnoverTTM: 0,
+  payablesTurnoverTTM: 0,
+  inventoryTurnoverTTM: 0,
+  roeTTM: 0,
+  capexPerShareTTM: 0,
+  dividendPerShareTTM: 0,
+  debtToMarketCapTTM: 0,
+};
+
 const CompanyProfile = (props: Props) => {
   const ticker = useOutletContext<string>();
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
   useEffect(() => {
-    const getCompanyKeyMetrics = async () => {
-      const value = await getKeyMetrics(ticker);
-      setCompanyData(value?.data[0]);
-    };
+    const getCompanyKeyMetrics =
+      process.env.NODE_ENV == CONST_ENV_VAR
+        ? () => setCompanyData(emptyCompanyKeyMetrics)
+        : async () => {
+            const value = await getKeyMetrics(ticker);
+            setCompanyData(value?.data[0]);
+          };
     getCompanyKeyMetrics();
   }, []);
   return companyData ? (

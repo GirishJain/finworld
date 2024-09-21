@@ -1,11 +1,14 @@
-import React from "react";
+import { SyntheticEvent, useEffect, useRef } from "react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { useForm, UseFormReset } from "react-hook-form";
+import { StockCommentVar } from "../../../Models/CommentPost";
 
 type Props = {
-  symbol: string;
-  handleComment: (e: CommentFormInputs) => void;
+  stockComment: StockCommentVar;
+  handleCommentPost: (e: CommentFormInputs) => void;
+  formInput?: CommentFormInputs;
+  handleEditMode?: () => void;
 };
 
 type CommentFormInputs = {
@@ -18,15 +21,47 @@ const validation = Yup.object().shape({
   content: Yup.string().required("Content is required"),
 });
 
-const StockCommentForm = ({ symbol, handleComment }: Props) => {
+const StockCommentForm = ({
+  stockComment,
+  handleCommentPost,
+  formInput,
+  handleEditMode,
+}: Props) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
+    setValue,
   } = useForm<CommentFormInputs>({ resolver: yupResolver(validation) });
 
+  useEffect(() => {
+    if (stockComment) {
+      setValue("title", stockComment.title);
+      setValue("content", stockComment.content);
+    }
+  }, [stockComment]);
+
+  const timerRef = useRef<number | null>(null);
+
+  const onReset = (): void => {
+    handleEditMode && handleEditMode();
+    reset();
+  };
+
+  const onSubmit = (data: CommentFormInputs) => {
+    handleCommentPost(data);
+    timerRef.current = window.setTimeout(() => {
+      reset();
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+    }, 2000);
+  };
+
   return (
-    <form className="mt-4 ml-4" onSubmit={handleSubmit(handleComment)}>
+    <form className="mt-4 ml-4" onSubmit={handleSubmit(onSubmit)}>
       <input
         type="text"
         id="title"
@@ -52,6 +87,14 @@ const StockCommentForm = ({ symbol, handleComment }: Props) => {
         className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-sky-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 hover:opacity-80"
       >
         Post comment
+      </button>
+      &nbsp;
+      <button
+        type="button"
+        className="inline-flex items-center py-2.5 px-4 text-xs font-medium bg-white hover:bg-gray-100 text-gray-800 rounded-lg font-semibold py-2 px-4 border border-gray-400 rounded shadow hover:opacity-80"
+        onClick={onReset}
+      >
+        Cancel
       </button>
     </form>
   );

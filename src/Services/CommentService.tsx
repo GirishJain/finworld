@@ -8,6 +8,15 @@ const api =
     ? SERVICE_URL_PROD
     : SERVICE_URL_LOCAL) + "comment/";
 
+export const commentGetAPI = async (symbol: string) => {
+  try {
+    const data = await axios.get<CommentGet[]>(api + `?Symbol=${symbol}`);
+    return data;
+  } catch (error) {
+    handleError(error);
+  }
+};
+
 export const commentPostAPI = async (
   title: string,
   content: string,
@@ -24,9 +33,25 @@ export const commentPostAPI = async (
   }
 };
 
-export const commentGetAPI = async (symbol: string) => {
+export const commentPutAPI = async (
+  id: number,
+  title: string,
+  content: string
+) => {
   try {
-    const data = await axios.get<CommentGet[]>(api + `?Symbol=${symbol}`);
+    const data = await axios.put<CommentPost>(api + `${id}`, {
+      title: title,
+      content: content,
+    });
+    return data;
+  } catch (error) {
+    handleError(error);
+  }
+};
+
+export const commentDeleteAPI = async (id: number) => {
+  try {
+    const data = await axios.delete<CommentGet>(api + `${id}`);
     return data;
   } catch (error) {
     handleError(error);
